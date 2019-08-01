@@ -59,7 +59,7 @@ var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
 	function onMapClick(e) {
 	    var tmp=$("div[data-silex-id='silex-id-1564670520189-5']");
-	    tmp.text('Latitude: '+e.latlng.toString());
+	    tmp.text('Latitude: '+e.latlng('Lat').toString());
 	    
 		popup
 			.setLatLng(e.latlng)
