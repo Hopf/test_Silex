@@ -35,6 +35,8 @@
 <div id="mapid" style="width: 300px; height: 300px;"></div>
 <script type="text/javascript"> 
 var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+var setpoint=false;
+var latlng=null;
 
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -67,11 +69,9 @@ var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 	    tmp.text('Latitude: '+e.latlng["lat"].toString());
 	    tmp=$("div[data-silex-id='silex-id-1564670561243-6']");
 	    tmp.text('Longitude: '+e.latlng["lng"].toString());
-	    
-	    L.marker(e.latlng).addTo(mymap2)
-		.bindPopup("Position: "+e.latlng.toString()).openPopup();
-	    
-	    
+	    setpoint=true;
+	    latlng=e.latlng;
+
 		popup
 			.setLatLng(e.latlng)
 			.setContent("You clicked the map at " + e.latlng.toString())
@@ -116,7 +116,7 @@ var mymap2 = L.map('mapid2').setView([51.505, -0.09], 13);
 
 <output id="relationship-status-output" class="relationship-status-output color-default">0</output>
 
-<input type="range" id="relationship-status-slider" class="relationship-status-slider" value="0" min="0" max="10" step="1">
+<input type="range" id="relationship-status-slider" class="relationship-status-slider" value="0" min="0" max="100" step="10">
 
 <script type="text/javascript" charset="utf-8">
     $('input[type="range"]').rangeslider({
@@ -125,6 +125,10 @@ var mymap2 = L.map('mapid2').setView([51.505, -0.09], 13);
 
 $('#relationship-status-slider').on('change input', function() {
 		$('#relationship-status-output').text($(this).val());
+		if (setpoint==true) {
+		    	    L.marker(latlng).addTo(mymap2)
+		            .bindPopup("Position: "+latlng.toString()).openPopup();
+		}
 	});
 </script></div></div></div>
     </div>
