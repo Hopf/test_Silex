@@ -51,20 +51,7 @@ var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 		id: 'mapbox.streets'
 	}).addTo(mymap);
 
-	L.marker([51.5, -0.09]).addTo(mymap)
-		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
 
-	L.circle([51.508, -0.11], 500, {
-		color: 'red',
-		fillColor: '#f03',
-		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("I am a circle.");
-
-	L.polygon([
-		[51.509, -0.08],
-		[51.503, -0.06],
-		[51.51, -0.047]
-	]).addTo(mymap).bindPopup("I am a polygon.");
 
 
 	var popup = L.popup();
@@ -98,25 +85,8 @@ var mymap2 = L.map('mapid2').setView([51.505, -0.09], 13);
 		id: 'mapbox.streets'
 	}).addTo(mymap2);
 
-	L.marker([51.5, -0.09]).addTo(mymap2)
-		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-
-	L.circle([51.508, -0.11], 500, {
-		color: 'red',
-		fillColor: '#f03',
-		fillOpacity: 0.5
-	}).addTo(mymap2).bindPopup("I am a circle.");
-
-	L.polygon([
-		[51.509, -0.08],
-		[51.503, -0.06],
-		[51.51, -0.047]
-	]).addTo(mymap2).bindPopup("I am a polygon.");
 
 
-	var popup = L.popup();
-
-	
 </script></div></div><div data-silex-type="html" class="editable-style silex-id-1564749505708-3 html-element" data-silex-id="silex-id-1564749505708-3"><div class="silex-element-content"><p>Define the level of anonymization</p>
 
 <output id="relationship-status-output" class="relationship-status-output color-default">0</output>
