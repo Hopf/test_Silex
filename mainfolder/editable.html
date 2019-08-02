@@ -138,8 +138,8 @@ $('#relationship-status-slider').on('change input', function() {
 		    var scalelat=Math.abs(latlng["lat"]/100);
 		    var scalelng=Math.abs(latlng["lng"]/100);
 		    var factor=$(this).val()/2;
-		    latlng0=L.latlng(latlng["lat"]+scalelat*factor,latlng["lng"]-scalelng*factor);
-		    latlng1=L.latlng(latlng["lat"]-scalelat*factor,latlng["lng"]+scalelng*factor);
+		    latlng0=L.latLng(latlng["lat"]+scalelat*factor,latlng["lng"]-scalelng*factor);
+		    latlng1=L.latLng(latlng["lat"]-scalelat*factor,latlng["lng"]+scalelng*factor);
 		    
 		    var bound=L.latLngBounds(latlng0,latlng1);
 		    console.log(bound);
