@@ -28,6 +28,12 @@
 <link rel='stylesheet' href='https://andreruffert.github.io/rangeslider.js/assets/rangeslider.js/dist/rangeslider.css'>
 
 <script src="https://andreruffert.github.io/rangeslider.js/assets/rangeslider.js/dist/rangeslider.min.js">
+</script>
+
+<script type="text/javascript" charset="utf-8">
+var setpoint=false;
+var latlng=null;
+var point=null;
 </script><!-- End of Silex HEAD tag do not remove --></head>
 
 <body data-silex-id="body-initial" class="body-initial all-style enable-mobile silex-runtime" data-silex-type="container"><div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1474394621033-3 section-element" data-silex-id="silex-id-1474394621033-3" style="">
@@ -35,8 +41,7 @@
 <div id="mapid" style="width: 300px; height: 300px;"></div>
 <script type="text/javascript"> 
 var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-var setpoint=false;
-var latlng=null;
+
 
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -125,9 +130,14 @@ var mymap2 = L.map('mapid2').setView([51.505, -0.09], 13);
 
 $('#relationship-status-slider').on('change input', function() {
 		$('#relationship-status-output').text($(this).val());
-		if (setpoint==true) {
-		    	    L.marker(latlng).addTo(mymap2)
-		            .bindPopup("Position: "+latlng.toString()).openPopup();
+		if (point != null) {
+		    point.remove();
+		    point=null;
+		
+		    if (setpoint==true) {
+		        var point=L.marker(latlng).addTo(mymap2);
+		                
+		        }
 		}
 	});
 </script></div></div></div>
