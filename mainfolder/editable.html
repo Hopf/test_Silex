@@ -135,11 +135,15 @@ $('#relationship-status-slider').on('change input', function() {
 		    point=null;
 		    }
 		if (setpoint==true) {
-		    var bound=L.latLngBounds([latlng]);
+		    var scalelat=abs(latlng["lat"]/100);
+		    var scalelng=abs(latlng["lng"]/100);
+		    var factor=$(this).val()/2;
+		    latlng0=L.latlng(latlng["lat"]+scalelat*factor,latlng["lng"]-scalelng*factor);
+		    latlng1=L.latlng(latlng["lat"]-scalelat*factor,latlng["lng"]+scalelng*factor);
+		    
+		    var bound=L.latLngBounds(latlng0,latlng1);
 		    console.log(bound);
-            bound=bound.pad(100);
-            console.log(bound);
-		    point=L.rectangle(bound).addTo(mymap2);
+            point=L.rectangle(bound).addTo(mymap2);
 		    
 		    }
 		
