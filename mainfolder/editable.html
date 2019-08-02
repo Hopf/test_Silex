@@ -63,6 +63,9 @@ var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 	    tmp=$("div[data-silex-id='silex-id-1564670561243-6']");
 	    tmp.text('Longitude: '+e.latlng["lng"].toString());
 	    
+	    L.marker(e.latlng).addTo(mymap2)
+		.bindPopup("Position: "+e.latlng.toString()).openPopup();
+	    
 	    
 		popup
 			.setLatLng(e.latlng)
