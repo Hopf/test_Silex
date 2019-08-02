@@ -135,7 +135,7 @@ $('#relationship-status-slider').on('change input', function() {
 		    point=null;
 		    }
 		if (setpoint==true) {
-		    var bound=L.latLngBounds(latlng);
+		    var bound=L.latLngBounds([latlng]);
 		    console.log(bound);
 		   
 		    point=L.rectangle(bound).addTo(mymap2);
