@@ -25,34 +25,9 @@
  
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
 
-
-
-
-  
- <style>
-  #custom-handle {
-    width: 3em;
-    height: 1.6em;
-    top: 50%;
-    margin-top: -.8em;
-    text-align: center;
-    line-height: 1.6em;
-  }
-  </style>
-  
-    <script>
-  $( function() {
-    var handle = $( "#custom-handle" );
-    $( "#slider" ).slider({
-      create: function() {
-        handle.text( $( this ).slider( "value" ) );
-      },
-      slide: function( event, ui ) {
-        handle.text( ui.value );
-      }
-    });
-  } );
-  </script><!-- End of Silex HEAD tag do not remove --></head>
+<script src="https://andreruffert.github.io/rangeslider.js/assets/rangeslider.js/dist/rangeslider.min.js">
+    
+</script><!-- End of Silex HEAD tag do not remove --></head>
 
 <body data-silex-id="body-initial" class="body-initial all-style enable-mobile silex-runtime" data-silex-type="container"><div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1474394621033-3 section-element" data-silex-id="silex-id-1474394621033-3" style="">
         <div data-silex-type="container" class="editable-style silex-element-content silex-id-1474394621032-2 silex-container-content container-element prevent-draggable website-width" data-silex-id="silex-id-1474394621032-2"><div data-silex-type="text" class="editable-style text-element silex-id-1564670561243-6" data-silex-id="silex-id-1564670561243-6"><div class="silex-element-content normal"><p>Longitude:</p></div></div><div data-silex-type="text" class="editable-style silex-id-1564670520189-5 text-element" data-silex-id="silex-id-1564670520189-5"><div class="silex-element-content normal"><p>Latitude:</p></div></div><div data-silex-type="html" class="editable-style silex-id-1564672415615-1 html-element" data-silex-id="silex-id-1564672415615-1"><div class="silex-element-content"><p>New HTML box for Map</p>
