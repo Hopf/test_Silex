@@ -133,12 +133,11 @@ $('#relationship-status-slider').on('change input', function() {
 		if (point != null) {
 		    point.remove();
 		    point=null;
+		    }
+		if (setpoint==true) {
+		    var point=L.marker(latlng).addTo(mymap2);
+		    }
 		
-		    if (setpoint==true) {
-		        var point=L.marker(latlng).addTo(mymap2);
-		                
-		        }
-		}
 	});
 </script></div></div></div>
     </div>
